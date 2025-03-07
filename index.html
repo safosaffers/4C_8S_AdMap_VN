@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карта с Яндекс API</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=b60bc48f-6c15-43ef-a413-83f0e9843255&lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+    
+    <!-- Кнопка для открытия/закрытия фильтров -->
+    <button class="open-filters-btn" onclick="toggleFilters()">Фильтры</button>
+
+    <!-- Сайдбар с фильтрами -->
+    <div id="filter-sidebar" class="filter-sidebar">
+        <div id="filter-form" class="filter-content">
+            <h2>Фильтры</h2>
+            
+            <!-- Фильтр по типу конструкции -->
+            <h3>Тип конструкции</h3>
+            <label><input type="checkbox" name="type" value="ОН" checked> ОН</label><br>
+            <label><input type="checkbox" name="type" value="Билборд" checked> Билборд</label><br>
+            <label><input type="checkbox" name="type" value="Экран" checked> Экран</label><br>
+            <label><input type="checkbox" name="type" value="Стенд" checked> Стенд</label><br>
+            <label><input type="checkbox" name="type" value="Пиллар" checked> Пиллар</label><br>
+            <label><input type="checkbox" name="type" value="Стела" checked> Стела</label><br>
+            <label><input type="checkbox" name="type" value="Стела АЗС" checked> Стела АЗС</label><br>
+            <label><input type="checkbox" name="type" value="Сити-формат" checked> Сити-формат</label><br>
+            <label><input type="checkbox" name="type" value="Призма" checked> Призма</label><br>
+            <label><input type="checkbox" name="type" value="Флагшток" checked> Флагшток</label><br>
+            <label><input type="checkbox" name="type" value="ОП" checked> ОП</label><br>
+            
+            <!-- Фильтр по статусу занятости -->
+            <h3>Статус занятости</h3>
+            <label><input type="checkbox" name="occupancy" value="free" checked> Свободные</label><br>
+            <label><input type="checkbox" name="occupancy" value="occupied" checked> Занятые</label><br>
+            
+            <button type="button" onclick="applyFilters()">Применить фильтры</button>
+        </div>
+    </div>
+
+    <!-- Карта Яндекс -->
+    <div id="map" style="width: 100%; height: 100vh;"></div>
+
+    <!-- Футер с информацией -->
+    <footer class="footer">
+        <nav class="menu">
+            <a href="#about">О проекте</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </footer>
+
+    <!-- Подключаем JavaScript файлы -->
+    <script src="auth.js"></script>
+    <script src="database.js"></script>
+    <script src="mapManager.js"></script>
+    <script src="uiManager.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
