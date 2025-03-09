@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Справочная информация</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 2px solid #ddd;
+        }
+
+        header img {
+            max-width: 200px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        h1 {
+            font-size: 36px;
+            text-align: left;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .table-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 40px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        .table-row {
+            display: contents;
+        }
+
+        .table-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1000px; /* Увеличение размера изображений в 2 раза */
+            aspect-ratio: 4 / 3;
+        }
+
+        .image-wrapper img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .image-wrapper img.hover {
+            opacity: 0;
+        }
+
+        .image-wrapper:hover img.hover {
+            opacity: 1;
+        }
+
+        .text-content {
+            font-size: 26px;
+            line-height: 1.4;
+            margin: 0;
+        }
+        .video-wrapper {
+            width: 100%;
+            max-width: 500px; /* Задайте максимальный размер */
+            overflow: hidden;
+        }
+
+        .video-wrapper video {
+            width: 100%; /* Видео займет всю ширину родительского элемента */
+            height: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/LOGO.png" alt="Логотип">
+        <h1>Виды рекламных конструкций</h1>
+    </header>
+
+    <div class="table-container">
+        <!-- Первая строка -->
+        <div class="table-row">
+            <!-- Текст слева -->
+            <div class="table-cell text-content">
+                <p><strong>Афишный стенд</strong> - рекламная конструкция малого формата с одним, двумя или тремя информационными полями длиной 1,2 м или 1,8 м, высотой 1,8 м.</p>
+            </div>
+            <!-- Картинка справа -->
+            <div class="table-cell">
+                <div class="image-wrapper">
+                    <img src="images/poster_stand_4k.png" alt="Афишный стенд" class="default">
+                    <img src="images/poster_stand_4k_with_measures.png" alt="Афишный стенд с размерами" class="hover">
+                </div>
+            </div>
+        </div>
+
+        <!-- Вторая строка -->
+        <div class="table-row">
+            <!-- Картинка слева -->
+            <div class="table-cell">
+                <div class="image-wrapper">
+                    <img src="images/city_format_4k.png" alt="Сити-формат" class="default">
+                    <img src="images/city_format_4k_with_measures.png" alt="Сити-формат с размерами" class="hover">
+                </div>
+            </div>
+            <!-- Текст справа -->
+            <div class="table-cell text-content">
+                <p><strong>Сити-формат</strong> - рекламная конструкция малого формата с информационным полем длиной 1,2 м, высотой 1,8 м, оборудованная роллерным механизмом для смены изображений. Может быть односторонним или двухсторонним.</p>
+            </div>
+        </div>
+
+        <!-- Третья строка -->
+        <div class="table-row">
+            <!-- Текст слева -->
+            <div class="table-cell text-content">
+                <p><strong>Пиллар (тумба)</strong> - рекламная тумба с внутренней подсветкой среднего формата, имеющая информационное поле длиной 1,4 м, высотой 3,0 м. Может быть двухсторонняя (круглая) и трехсторонняя (вогнутая).</p>
+            </div>
+            <!-- Картинка справа -->
+            <div class="table-cell">
+                <div class="image-wrapper">
+                    <img src="images/pillar_4k.png" alt="Пиллар" class="default">
+                    <img src="images/pillar_4k_with_measures.png" alt="Пиллар с размерами" class="hover">
+                </div>
+            </div>
+        </div>
+
+        <!-- Четвертая строка -->
+        <div class="table-row">
+            <!-- Картинка слева -->
+            <div class="table-cell">
+                <div class="image-wrapper">
+                    <img src="images/banner_1_4k.png" alt="Билборд" class="default">
+                    <img src="images/banner_1_4k_with_measures.png" alt="Билборд с размерами" class="hover">
+                </div>
+            </div>
+            <!-- Текст справа -->
+            <div class="table-cell text-content">
+                <p><strong>Билборд</strong> - рекламная конструкция среднего формата, имеющая статическое информационное поле длиной 6,0 м, высотой 3,0 м. Может быть односторонним, двухсторонним (плоским или V-образным), трехсторонним или четырехсторонним.</p>
+            </div>
+        </div>
+
+        <!-- Четвертая строка - добавляем остальные билборды -->
+        <div class="table-row">
+            <div class="table-cell">
+                <div class="image-wrapper">
+                    <img src="images/banner_3_4k.png" alt="Билборд" class="default">
+                    <img src="images/banner_3_4k_with_measures.png" alt="Билборд с размерами" class="hover">
+                </div>
+            </div>
+            <div class="table-cell">
+                <div class="image-wrapper">
+                    <img src="images/banner_4_4k.png" alt="Билборд" class="default">
+                    <img src="images/banner_4_4k_with_measures.png" alt="Билборд с размерами" class="hover">
+                </div>
+            </div>
+        </div>
+
+<div class="table-row">
+    <!-- Видео слева -->
+    <div class="table-cell">
+        <div class="video-wrapper">
+            <video autoplay loop muted playsinline class="default">
+                <source src="videos/prisma_vision_animation.mp4" type="video/mp4">
+                Ваш браузер не поддерживает видеоформат MP4.
+            </video>
+        </div>
+    </div>
+    <!-- Текст справа -->
+    <div class="table-cell text-content">
+        <p><strong>Призмадинамическая конструкция (призмавижн)</strong> - рекламная конструкция среднего формата с информационным полем длиной 6,0 м, высотой 3,0 м, имеющая динамический рекламоноситель, позволяющий демонстрировать с заданным интервалом времени несколько различных изображений.</p>
+    </div>
+</div>
+
+
+
+</div>
+</body>
+</html>
