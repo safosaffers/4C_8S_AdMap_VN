@@ -7,6 +7,9 @@ const multer = require('multer');
 
 // Initialize Express app
 const app = express();
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, '../public')));
 const PORT = process.env.PORT || 8080;
 
 // Configure multer for file uploads
@@ -195,9 +198,20 @@ app.delete('/api/structures/:id', async (req, res) => {
   }
 });
 
-// Serve the main HTML file for all other routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+// // Serve the main HTML file for all other routes
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, 'index.ejs'));
+// });
+
+// Подключение статических файлов (CSS, изображения и т.д.)
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/info', (req, res) => {
+    res.render('info'); // Отправляем шаблон info.ejs
+});
+// Маршрут для главной страницы
+app.get('/', (req, res) => {
+    res.render('index'); // Отправляем шаблон index.ejs
 });
 
 // Start the server

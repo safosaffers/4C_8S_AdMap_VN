@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Карта с Яндекс API</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=b60bc48f-6c15-43ef-a413-83f0e9843255&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
-    <header>
-        <img src="info_page/images/LOGO.png" alt="Логотип">
-        <h1>Виды рекламных конструкций</h1>
-    </header>
-
+    <%- include('header') %>
     <!-- Кнопка для открытия/закрытия фильтров -->
     <button class="open-filters-btn" onclick="toggleFilters()">Фильтры</button>
 
@@ -51,16 +47,16 @@
     <footer class="footer">
         <nav class="menu">
             <a href="#about">О проекте</a>
-            <a href="info_page/info.html">Виды конструкций</a>
+            <a href="/info">Виды конструкций</a>
             <a href="#contact">Контакты</a>
         </nav>
     </footer>
 
     <!-- Подключаем JavaScript файлы -->
-    <script src="auth.js"></script>
-    <script src="database.js"></script>
-    <script src="mapManager.js"></script>
-    <script src="uiManager.js"></script>
-    <script src="script.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/database.js"></script>
+    <script src="/js/mapManager.js"></script>
+    <script src="/js/uiManager.js"></script>
+    <script src="/js/script.js"></script>
 </body>
 </html>

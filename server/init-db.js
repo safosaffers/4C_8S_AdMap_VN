@@ -12,7 +12,7 @@ async function initializeDatabase() {
     console.log('Starting database initialization...');
     
     // Read the JSON file
-    const jsonPath = path.join(__dirname, '..', 'full_geo_data_with_lat_lon.json');
+    const jsonPath = path.join(__dirname, 'data', 'full_geo_data_with_lat_lon.json');
     const jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
     
     console.log(`Loaded ${jsonData.length} records from JSON file`);
