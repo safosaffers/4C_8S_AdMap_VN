@@ -13,4 +13,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD ["npm", "start"]
+CMD ["sh", "-c", "npm run init-db && npm start"]

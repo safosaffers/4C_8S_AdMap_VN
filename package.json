@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server/server.js",
     "dev": "nodemon server/server.js",
-    "init-db": "node scripts/init-db.js"
+    "init-db": "node server/init-db.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
