@@ -46,6 +46,24 @@ function setupFilterHandlers() {
 
 // Функция для открытия/закрытия фильтров
 function toggleFilters() {
+    const btn = document.querySelector('.open-filters-btn');
+    const filterButton = document.querySelector('.filter-content button');
+
+    // Переключаем класс expanded
+    btn.classList.toggle('expanded');
+
+    if (btn.classList.contains('expanded')) {
+        // Изменяем текст кнопки
+        btn.textContent = 'Закрыть фильтры';
+
+        // Устанавливаем ширину кнопки равной ширине кнопки .filter-content button
+        btn.style.width = `${filterButton.offsetWidth}px`;
+    } else {
+        // Возвращаем исходное состояние
+        btn.textContent = 'Фильтры';
+        btn.style.width = 'auto';
+    }
+    /* Настройка сайдбара */
     const filterSidebar = document.getElementById("filter-sidebar");
     // Проверяем, если сайдбар скрыт, то открываем его, если видим, то закрываем
     if (filterSidebar.style.transform === "translateX(0px)") {
@@ -93,3 +111,15 @@ function resetFilters() {
 
     console.log("Фильтры сброшены");
 }
+
+// Добавляем обработчик изменения размера окна
+window.addEventListener('resize', () => {
+    const btn = document.querySelector('.open-filters-btn');
+    const filterButton = document.querySelector('.filter-content button');
+
+    if (btn.classList.contains('expanded')) {
+        // При изменении размера окна обновляем позицию и ширину кнопки
+        const filterButtonRect = filterButton.getBoundingClientRect();
+        btn.style.width = `${filterButton.offsetWidth}px`;
+    }
+})

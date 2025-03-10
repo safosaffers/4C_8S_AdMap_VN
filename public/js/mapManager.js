@@ -4,6 +4,7 @@ class MapManager {
     constructor(mapElementId) {
         this.mapElementId = mapElementId;
         this.map = null;
+        this.layer = null;
         this.placemarks = [];
         this.markerImages = {};
         this.initMarkerImages();
@@ -15,7 +16,6 @@ class MapManager {
             center: center,
             zoom: zoom
         });
-        
         return this.map;
     }
 

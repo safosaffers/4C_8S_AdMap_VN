@@ -8,33 +8,49 @@
     <script src="https://api-maps.yandex.ru/2.1/?apikey=b60bc48f-6c15-43ef-a413-83f0e9843255&lang=ru_RU" type="text/javascript"></script>
 </head>
 <body>
-    <%- include('header') %>
+    <%- include("header",{my_tytle:"Расположение рекламных конструкций"}) %>
     <!-- Кнопка для открытия/закрытия фильтров -->
     <button class="open-filters-btn" onclick="toggleFilters()">Фильтры</button>
 
     <!-- Сайдбар с фильтрами -->
     <div id="filter-sidebar" class="filter-sidebar">
         <div id="filter-form" class="filter-content">
-            <h2>Фильтры</h2>
             
             <!-- Фильтр по типу конструкции -->
-            <h3>Тип конструкции</h3>
-            <label><input type="checkbox" name="type" value="ОН" checked> ОН</label><br>
-            <label><input type="checkbox" name="type" value="Билборд" checked> Билборд</label><br>
-            <label><input type="checkbox" name="type" value="Экран" checked> Экран</label><br>
-            <label><input type="checkbox" name="type" value="Стенд" checked> Стенд</label><br>
-            <label><input type="checkbox" name="type" value="Пиллар" checked> Пиллар</label><br>
-            <label><input type="checkbox" name="type" value="Стела" checked> Стела</label><br>
-            <label><input type="checkbox" name="type" value="Стела АЗС" checked> Стела АЗС</label><br>
-            <label><input type="checkbox" name="type" value="Сити-формат" checked> Сити-формат</label><br>
-            <label><input type="checkbox" name="type" value="Призма" checked> Призма</label><br>
-            <label><input type="checkbox" name="type" value="Флагшток" checked> Флагшток</label><br>
-            <label><input type="checkbox" name="type" value="ОП" checked> ОП</label><br>
-            
+            <!-- Пример группировки -->
+            <br><br></bk><h3>Тип конструкции</h3>
+
+            <!-- Группа 1: Стандартные конструкции -->
+            <fieldset class="filter-group">
+                <legend>Стандартные</legend>
+                <label><input type="checkbox" name="type" value="ОН" checked> ОН</label>
+                <label><input type="checkbox" name="type" value="Билборд" checked> Билборд</label>
+                <label><input type="checkbox" name="type" value="Экран" checked> Экран</label>
+                <label><input type="checkbox" name="type" value="Призма" checked> Призма</label>
+
+            </fieldset>
+
+            <!-- Группа 2: Малые формы -->
+            <fieldset class="filter-group">
+                <legend>Малые формы</legend>
+                <label><input type="checkbox" name="type" value="Стенд" checked> Стенд</label>
+                <label><input type="checkbox" name="type" value="Сити-формат" checked> Сити-формат</label>
+                <label><input type="checkbox" name="type" value="Флагшток" checked> Флагшток</label>
+            </fieldset>
+
+            <!-- Группа 3: Специализированные -->
+            <fieldset class="filter-group">
+                <legend>Специализированные</legend>
+                <label><input type="checkbox" name="type" value="Пиллар" checked> Пиллар</label>
+                <label><input type="checkbox" name="type" value="Стела" checked> Стела</label>
+                <label><input type="checkbox" name="type" value="Стела АЗС" checked> Стела АЗС</label>
+                <label><input type="checkbox" name="type" value="ОП" checked> ОП</label>
+            </fieldset>
+
             <!-- Фильтр по статусу занятости -->
             <h3>Статус занятости</h3>
-            <label><input type="checkbox" name="occupancy" value="free" checked> Свободные</label><br>
-            <label><input type="checkbox" name="occupancy" value="occupied" checked> Занятые</label><br>
+            <label><input type="checkbox" name="occupancy" value="free" checked> Свободные</label>
+            <label><input type="checkbox" name="occupancy" value="occupied" checked> Занятые</label>
             
             <button type="button" onclick="applyFilters()">Применить фильтры</button>
         </div>
