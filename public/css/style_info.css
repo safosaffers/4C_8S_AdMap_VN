@@ -1,0 +1,72 @@
+/* --style_info.css--
+Описывает стили страницы с информацией 
+о рекламных конструкциях. */ 
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.table-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.table-row {
+    display: contents;
+}
+
+.table-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; /* Увеличение размера изображений в 2 раза */
+    aspect-ratio: 4 / 3;
+}
+
+.image-wrapper img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-wrapper img.hover {
+    opacity: 0;
+}
+
+.image-wrapper:hover img.hover {
+    opacity: 1;
+}
+
+.text-content {
+    font-size: 26px;
+    line-height: 1.4;
+    margin: 0;
+}
+.video-wrapper {
+    width: 100%;
+    max-width: 500px; /* Задайте максимальный размер */
+    overflow: hidden;
+}
+
+.video-wrapper video {
+    width: 100%; /* Видео займет всю ширину родительского элемента */
+    height: auto;
+}
