@@ -9,6 +9,7 @@ body {
     padding: 0;
     background-color: #e8e9e2;
     color: #17051b;
+    margin-bottom: 60px; /* Высота футера (примерно) */
 }
 
 .table-container {

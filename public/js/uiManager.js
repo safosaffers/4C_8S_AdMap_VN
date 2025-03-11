@@ -17,19 +17,23 @@ class UIManager {
         this.updateUIBasedOnAuth();
     }
 
-    // Создание кнопки для добавления новой конструкции
-    createAddStructureButton() {
-        const button = document.createElement('button');
-        button.id = 'add-structure-btn';
-        button.className = 'add-structure-btn';
-        button.textContent = 'Добавить РК';
-        button.onclick = () => this.toggleAddStructureForm();
-        
-        // По умолчанию скрываем кнопку, она будет показана только администраторам
-        button.style.display = 'none';
-        
-        document.body.appendChild(button);
-    }
+createAddStructureButton() {
+    const button = document.createElement('button');
+    button.id = 'add-structure-btn';
+    button.className = 'add-structure-btn';
+    button.textContent = 'Добавить РК';
+    button.onclick = () => this.toggleAddStructureForm();
+
+    // Устанавливаем стили для позиционирования
+    button.style.position = 'absolute'; // или 'fixed', если нужно фиксированное положение
+    button.style.top = '140px';
+    button.style.right = '200px';
+
+    // По умолчанию скрываем кнопку, она будет показана только администраторам
+    button.style.display = 'none';
+
+    document.body.appendChild(button);
+}
 
     // Создание формы для добавления новой конструкции
     createAddStructureForm() {

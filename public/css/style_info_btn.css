@@ -27,6 +27,7 @@
   touch-action: manipulation;
   position: relative;
   overflow: hidden;
+  margin-top: 30px;
 }
 .button span {
   cursor: pointer;

@@ -20,7 +20,7 @@
 }
 
 .header img {
-    max-width: 100px; /* Размер картинки остается прежним */
+    max-width: 90px; /* Размер картинки остается прежним */
     margin-top: 5px; /* Идеально настроено */
     margin-left: 90px; 
     margin-right: 90px;

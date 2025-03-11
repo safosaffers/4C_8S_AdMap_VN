@@ -22,6 +22,8 @@ class Auth {
         const button = document.createElement('button');
         button.id = 'login-btn';
         button.className = 'login-btn';
+        button.style.top = '140px';
+        button.style.right = '100px';
         button.textContent = this.isLoggedIn ? 'Выйти' : 'Войти';
         button.onclick = () => this.isLoggedIn ? this.logout() : this.toggleLoginForm();
         document.body.appendChild(button);

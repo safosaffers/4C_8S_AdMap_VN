@@ -145,3 +145,13 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const footer = document.querySelector('.footer');
+  const map = document.getElementById('map');
+
+  if (footer && map) {
+    const footerHeight = footer.offsetHeight; // Получаем высоту футера
+    map.style.marginBottom = `${footerHeight}px`; // Устанавливаем отступ для карты
+  }
+});

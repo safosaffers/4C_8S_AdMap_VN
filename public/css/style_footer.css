@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  background: #336666; /* Фон футера */
+  padding: 5px 20px;
+  position: fixed; /* Фиксированное положение */
+  bottom: 0; /* Прижат к нижней части экрана */
+  left: 0; /* Начинается с левого края */
+  width: 100%; /* Занимает всю ширину экрана */
+  z-index: 1000; /* Чтобы футер был поверх других элементов */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Добавляем тень для визуального разделения */
+  height: 60px; /* Высота футера */
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Расстояние между элементами */
+}
+
+.menu li {
+  display: inline-block;
+}
+
+.menu a {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fcf3f3; /* Цвет текста по умолчанию */
+  display: block;
+  position: relative;
+  padding: 3px 0; /* Вертикальные отступы */
+  padding-left: 10px; /* Отступ слева */
+  padding-right: 10px; /* Отступ справа */
+}
+
+.menu a:hover {
+  color: #bb0303; /* Цвет текста при наведении */
+}
+
+.menu a::before {
+  content: "";
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #bb0303; /* Цвет подчёркивающей линии */
+  transition: 0.5s transform ease;
+  transform: scale3d(0, 1, 1);
+  transform-origin: 0 50%;
+}
+
+.menu a:hover::before {
+  transform: scale3d(1, 1, 1); /* Анимация подчёркивания */
+}

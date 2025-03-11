@@ -55,18 +55,9 @@
             <button type="button" onclick="applyFilters()">Применить фильтры</button>
         </div>
     </div>
-
     <!-- Карта Яндекс -->
     <div id="map" style="width: 100%; height: 100vh;"></div>
 
-    <!-- Футер с информацией -->
-    <footer class="footer">
-        <nav class="menu">
-            <a href="#about">О проекте</a>
-            <a href="/info">Виды конструкций</a>
-            <a href="#contact">Контакты</a>
-        </nav>
-    </footer>
 
     <!-- Подключаем JavaScript файлы -->
     <script src="/js/auth.js"></script>
@@ -74,5 +65,8 @@
     <script src="/js/mapManager.js"></script>
     <script src="/js/uiManager.js"></script>
     <script src="/js/script.js"></script>
+    
+    <!-- Подключаем футер-->
+    <%- include("footer") %>
 </body>
 </html>
