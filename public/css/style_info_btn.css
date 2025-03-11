@@ -1,0 +1,65 @@
+
+/* Подключение шрифта */
+@font-face {
+    font-family: 'AA Stetica';
+    src: url('../fonts/AAStetica-Light.woff2') format('woff2'),
+         url('../fonts/AAStetica-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.button {
+  display: inline-block;
+  border-radius: 1.5rem; /* Скругление как у второй кнопки */
+  background-color: #366; /* Цвет фона при наведении как у второй кнопки */
+  color: #fff; /* Цвет текста при наведении как у второй кнопки */
+  border: 0 solid #e2e8f0; /* Граница как у второй кнопки */
+  text-align: center;
+  font-family: 'AA Stetica';
+  font-size: 2.0rem; /* Размер шрифта как у второй кнопки */
+  font-weight: 600; /* Жирность шрифта как у второй кнопки */
+  padding: 1rem 1.6rem; /* Отступы как у второй кнопки */
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Плавная анимация как у второй кнопки */
+  box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25); /* Тень как у второй кнопки */
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  position: relative;
+  overflow: hidden;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb'; /* Стрелка как у первой кнопки */
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover {
+  background-color: #033; /* Белый фон как у второй кнопки */
+}
+
+.button:hover span {
+  padding-right: 25px; /* Сдвиг текста как у первой кнопки */
+}
+
+.button:hover span:after {
+  opacity: 1; /* Появление стрелки как у первой кнопки */
+  right: 0;
+}
+
+@media (min-width: 768px) {
+  .button {
+    font-size: 2rem; /* Адаптация для больших экранов как у второй кнопки */
+    padding: 1rem 2rem; /* Увеличенные отступы как у второй кнопки */
+  }
+}

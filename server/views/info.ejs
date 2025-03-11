@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Справочная информация</title>
     <link rel="stylesheet" href="css/style_info.css">
+    <link rel="stylesheet" href="css/style_info_btn.css">
 </head>
 <body>
     <!-- Контейнер для header -->
@@ -13,8 +14,9 @@
         <!-- Первая строка -->
         <div class="table-row">
             <!-- Текст слева -->
-            <div class="table-cell text-content">
-                <p><strong>Афишный стенд</strong> - рекламная конструкция малого формата с одним, двумя или тремя информационными полями длиной 1,2 м или 1,8 м, высотой 1,8 м.</p>
+            <div class="table-cell text-content" style="display: flex; flex-direction: column;">
+                <div><p><strong>Афишный стенд</strong> - рекламная конструкция малого формата с одним, двумя или тремя информационными полями длиной 1,2 м или 1,8 м, высотой 1,8 м.</p></div>
+                <div><button class="button" onclick="redirectToIndex('Стенд')"><span>Показать на карте</span></button></div>
             </div>
             <!-- Картинка справа -->
             <div class="table-cell">
@@ -35,16 +37,18 @@
                 </div>
             </div>
             <!-- Текст справа -->
-            <div class="table-cell text-content">
-                <p><strong>Сити-формат</strong> - рекламная конструкция малого формата с информационным полем длиной 1,2 м, высотой 1,8 м, оборудованная роллерным механизмом для смены изображений. Может быть односторонним или двухсторонним.</p>
+            <div class="table-cell text-content" style="display: flex; flex-direction: column;">
+                <div><p><strong>Сити-формат</strong> - рекламная конструкция малого формата с информационным полем длиной 1,2 м, высотой 1,8 м, оборудованная роллерным механизмом для смены изображений. Может быть односторонним или двухсторонним.</p></div>
+                <div><button class="button" onclick="redirectToIndex('Сити-формат')"><span>Показать на карте</span></button></div>
             </div>
         </div>
 
         <!-- Третья строка -->
         <div class="table-row">
             <!-- Текст слева -->
-            <div class="table-cell text-content">
-                <p><strong>Пиллар (тумба)</strong> - рекламная тумба с внутренней подсветкой среднего формата, имеющая информационное поле длиной 1,4 м, высотой 3,0 м. Может быть двухсторонняя (круглая) и трехсторонняя (вогнутая).</p>
+            <div class="table-cell text-content" style="display: flex; flex-direction: column;">
+                <div><p><strong>Пиллар (тумба)</strong> - рекламная тумба с внутренней подсветкой среднего формата, имеющая информационное поле длиной 1,4 м, высотой 3,0 м. Может быть двухсторонняя (круглая) и трехсторонняя (вогнутая).</p></div>
+                <div><button class="button" onclick="redirectToIndex('Пиллар')"><span>Показать на карте</span></button></div>
             </div>
             <!-- Картинка справа -->
             <div class="table-cell">
@@ -65,45 +69,36 @@
                 </div>
             </div>
             <!-- Текст справа -->
-            <div class="table-cell text-content">
-                <p><strong>Билборд</strong> - рекламная конструкция среднего формата, имеющая статическое информационное поле длиной 6,0 м, высотой 3,0 м. Может быть односторонним, двухсторонним (плоским или V-образным), трехсторонним или четырехсторонним.</p>
+            <div class="table-cell text-content" style="display: flex; flex-direction: column;">
+                <div><p><strong>Билборд</strong> - рекламная конструкция среднего формата, имеющая статическое информационное поле длиной 6,0 м, высотой 3,0 м. Может быть односторонним, двухсторонним (плоским или V-образным), трехсторонним или четырехсторонним.</p></div>
+                <div><button class="button" onclick="redirectToIndex('Билборд')"><span>Показать на карте</span></button></div>
             </div>
         </div>
 
-        <!-- Четвертая строка - добавляем остальные билборды -->
+        <!-- Пятая строка -->
         <div class="table-row">
-            <div class="table-cell">
-                <div class="image-wrapper">
-                    <img src="images/banner_3_4k.png" alt="Билборд" class="default">
-                    <img src="images/banner_3_4k_with_measures.png" alt="Билборд с размерами" class="hover">
-                </div>
+            <!-- Текст слева -->
+            <div class="table-cell text-content" style="display: flex; flex-direction: column;">
+                <div><p><strong>Призмадинамическая конструкция (призмавижн)</strong> - рекламная конструкция среднего формата с информационным полем длиной 6,0 м, высотой 3,0 м, имеющая динамический рекламоноситель, позволяющий демонстрировать с заданным интервалом времени несколько различных изображений.</p></div>
+                <div><button class="button" onclick="redirectToIndex('Призма')"><span>Показать на карте</span></button></div>
             </div>
+            <!-- Видео справа -->
             <div class="table-cell">
-                <div class="image-wrapper">
-                    <img src="images/banner_4_4k.png" alt="Билборд" class="default">
-                    <img src="images/banner_4_4k_with_measures.png" alt="Билборд с размерами" class="hover">
+                <div class="video-wrapper">
+                    <video autoplay loop muted playsinline class="default">
+                        <source src="videos/prisma_vision_animation.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видеоформат MP4.
+                    </video>
                 </div>
             </div>
         </div>
-
-<div class="table-row">
-    <!-- Видео слева -->
-    <div class="table-cell">
-        <div class="video-wrapper">
-            <video autoplay loop muted playsinline class="default">
-                <source src="videos/prisma_vision_animation.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видеоформат MP4.
-            </video>
-        </div>
     </div>
-    <!-- Текст справа -->
-    <div class="table-cell text-content">
-        <p><strong>Призмадинамическая конструкция (призмавижн)</strong> - рекламная конструкция среднего формата с информационным полем длиной 6,0 м, высотой 3,0 м, имеющая динамический рекламоноситель, позволяющий демонстрировать с заданным интервалом времени несколько различных изображений.</p>
-    </div>
-</div>
 
-
-
-</div>
+    <script>
+        // Функция для перехода на index.ejs с параметром типа конструкции
+        function redirectToIndex(type) {
+            window.location.href = `/index?type=${encodeURIComponent(type)}`;
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'AA Stetica';
+    src: url('AAStetica-Light.woff2') format('woff2'),
+        url('AAStetica-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+

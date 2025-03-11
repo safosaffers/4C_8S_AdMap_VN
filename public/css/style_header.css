@@ -4,7 +4,7 @@
     align-items: center; /* Выравнивание по центру по вертикали */
     justify-content: flex-start; /* Выравнивание по левому краю */
     padding: 5px 10px; /* Минимальные отступы */
-    background-color: #f2f2f7;
+    background-color: #033;
     border-bottom: 2px solid #ddd;
     overflow: visible; /* Разрешаем элементам выходить за пределы плашки */
 }
@@ -15,7 +15,7 @@
     text-align: left;
     margin: 0;
     white-space: nowrap;
-    color: #333;
+    color: #e8e9e2;
     line-height: 1; /* Уменьшаем высоту строки */
 }
 
