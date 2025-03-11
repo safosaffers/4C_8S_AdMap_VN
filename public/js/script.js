@@ -17,7 +17,7 @@ async function init() {
     
     // Отображаем маркеры на карте
     displayMarkers();
-    
+    applyFilters();
     // Настраиваем обработчики событий для фильтров
     setupFilterHandlers();
 }
@@ -123,3 +123,25 @@ window.addEventListener('resize', () => {
         btn.style.width = `${filterButton.offsetWidth}px`;
     }
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Функция для получения параметра из URL
+    function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+    // Получаем значение параметра "type"
+    const selectedType = getUrlParameter('type');
+
+    if (selectedType) {
+        const allCheckboxes = document.querySelectorAll('input[name="type"]');
+        allCheckboxes.forEach(checkbox => {
+            checkbox.checked = false;
+        });
+
+        const checkbox = document.querySelector(`input[name="type"][value="${selectedType}"]`);
+        if (checkbox) {
+            checkbox.checked = true;
+        }
+    }
+});

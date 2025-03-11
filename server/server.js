@@ -206,11 +206,18 @@ app.delete('/api/structures/:id', async (req, res) => {
 // Подключение статических файлов (CSS, изображения и т.д.)
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Маршрут для корневого пути
+app.get('/', (req, res) => {
+    res.redirect('/index'); // Перенаправляем на /index
+});
+
+// Маршрут для страницы info
 app.get('/info', (req, res) => {
     res.render('info'); // Отправляем шаблон info.ejs
 });
+
 // Маршрут для главной страницы
-app.get('/', (req, res) => {
+app.get('/index', (req, res) => {
     res.render('index'); // Отправляем шаблон index.ejs
 });
 
