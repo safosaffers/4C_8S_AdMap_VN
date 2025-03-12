@@ -1,0 +1,15 @@
+/* Переопределение стилей кнопки fullscreenControl */
+.ymaps-2-1-79-fullscreenControl {
+    background-color: red !important;
+    color: white !important;
+    border-radius: 5px;
+}
+
+.ymaps-2-1-79-fullscreenControl:hover {
+    background-color: darkred !important;
+}
+
+.ymaps-2-1-79-fullscreenControl .ymaps-2-1-79-icon {
+    width: 30px !important;
+    height: 30px !important;
+}

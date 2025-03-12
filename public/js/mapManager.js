@@ -14,8 +14,36 @@ class MapManager {
     initMap(center = [58.5215, 31.2755], zoom = 14) {
         this.map = new ymaps.Map(this.mapElementId, {
             center: center,
-            zoom: zoom
+            zoom: zoom,
+            controls: ['fullscreenControl']
         });
+        // ----------------------------------------------------------------------------
+        // Создаем пользовательский макет для кнопки полноэкранного режима
+        const FullscreenControlLayout = ymaps.templateLayoutFactory.createClass(
+            '<div class="custom-fullscreen-control">' +
+            '<span class="icon">+</span>' + // Здесь можно использовать свою иконку
+            '</div>', {
+                build: function () {
+                    FullscreenControlLayout.superclass.build.call(this);
+                    this._$element = $('.custom-fullscreen-control', this.getParentElement());
+                    this._$element.on('click', this._onClick.bind(this));
+                },
+                clear: function () {
+                    this._$element.off('click');
+                    FullscreenControlLayout.superclass.clear.call(this);
+                },
+                _onClick: function () {
+                    alert('Кнопка полноэкранного режима нажата!');
+                }
+            }
+        );
+
+        // Добавляем кнопку с пользовательским макетом
+        const fullscreenControl = new ymaps.control.FullscreenControl({
+            layout: FullscreenControlLayout
+        });
+        this.map.controls.add(fullscreenControl);
+        // ----------------------------------------------------------------------------
         return this.map;
     }
 
